@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cilium-config
+  namespace: kube-system
+data:
+  auto-create-cilium-node-resource: "true"
+  auto-direct-node-routes: "false"
+  bpf-lb-map-max: "65536"
+  bpf-map-dynamic-size-ratio: "0.0025"
+  bpf-policy-map-max: "16384"
+  cilium-endpoint-gc-interval: 5m0s
+  cluster-id: "1"
+  cluster-name: cluster1
+  custom-cni-conf: "false"
+  debug: "false"
+  disable-cnp-status-updates: "true"
+  egress-masquerade-interfaces: "false"
+  enable-auto-protect-node-port-range: "true"
+  enable-bandwidth-manager: "true"
+  enable-bpf-clock-probe: "true"
+  enable-bpf-masquerade: "false"
+  enable-endpoint-health-checking: "true"
+  enable-endpoint-routes: "true"
+  enable-health-check-nodeport: "true"
+  enable-health-checking: "true"
+  enable-hubble: "true"
+  enable-ipv4: "true"
+  enable-ipv6: "false"
+  enable-l7-proxy: "true"
+  enable-local-redirect-policy: "false"
+  enable-policy: default
+  enable-remote-node-identity: "true"
+  enable-session-affinity: "true"
+  enable-well-known-identities: "false"
+  enable-xt-socket-fallback: "true"
+  hubble-disable-tls: "false"
+  hubble-listen-address: :4244
+  hubble-socket-path: /var/run/cilium/hubble.sock
+  hubble-tls-cert-file: /var/lib/cilium/tls/hubble/server.crt
+  hubble-tls-client-ca-files: /var/lib/cilium/tls/hubble/client-ca.crt
+  hubble-tls-key-file: /var/lib/cilium/tls/hubble/server.key
+  identity-allocation-mode: crd
+  install-iptables-rules: "true"
+  ipam: eni
+  kube-proxy-replacement: probe
+  masquerade: "false"
+  monitor-aggregation: medium
+  monitor-aggregation-flags: all
+  monitor-aggregation-interval: 5s
+  node-port-bind-protection: "true"
+  operator-api-serve-addr: 127.0.0.1:9234
+  preallocate-bpf-maps: "false"
+  sidecar-istio-proxy-image: cilium/istio_proxy
+  tunnel: disabled
+  wait-bpf-mount: "true"
